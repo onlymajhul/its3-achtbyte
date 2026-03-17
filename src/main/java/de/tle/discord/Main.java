@@ -17,14 +17,15 @@ public class Main {
         Database.connect();
 
         JDABuilder builder = JDABuilder.createDefault(token);
-
         List<ListenerAdapter> cogs = CogLoader.loadCogs("de.tle.discord.cogs");
 
         for (ListenerAdapter cog : cogs) {
             builder.addEventListeners(cog);
             System.out.println("Loaded cog: " + cog.getClass().getSimpleName());
         }
-
+        builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
+        builder.setActivity(Activity.playing("Ist am Moggen"));
         JDA api = builder.build();
+
     }
 }
