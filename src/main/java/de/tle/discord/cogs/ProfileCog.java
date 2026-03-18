@@ -1,6 +1,7 @@
 package de.tle.discord.cogs;
 
 import de.tle.discord.db.Database;
+import de.tle.discord.emojis.EmojiMatch;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -28,7 +29,7 @@ public class ProfileCog extends ListenerAdapter {
                 int wins = rs.getInt("wins");
                 int losses = rs.getInt("losses");
 
-                event.reply("👤 Wins: " + wins + "\n❌ Losses: " + losses).queue();
+                event.reply(EmojiMatch.match_win + (" Wins: ") + wins + "\n" + EmojiMatch.match_lose + " Losses: " + losses).queue();
             }
 
         } catch (Exception e) {

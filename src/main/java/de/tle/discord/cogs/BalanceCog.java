@@ -1,6 +1,7 @@
 package de.tle.discord.cogs;
 
 import de.tle.discord.db.Database;
+import de.tle.discord.emojis.EmojiBalance;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -28,7 +29,7 @@ public class BalanceCog extends ListenerAdapter {
                 int cash = rs.getInt("cash");
                 int bank = rs.getInt("bank");
 
-                event.reply("💰 Cash: " + cash + "\n🏦 Bank: " + bank).queue();
+                event.reply(EmojiBalance.coin + " Cash: " + cash + "\n" + EmojiBalance.balance + " Bank: " + bank).queue();
             } else {
                 event.reply("No data found.").queue();
             }

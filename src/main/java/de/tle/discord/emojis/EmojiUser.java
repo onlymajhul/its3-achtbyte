@@ -1,3 +1,5 @@
+package de.tle.discord.emojis;
+
 public interface EmojiUser {
     String user_id = "<:user_id:1483402695883620413>";
     String user_name = "<:user_name:1483402992710586479>";

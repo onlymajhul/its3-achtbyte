@@ -1,6 +1,7 @@
 package de.tle.discord.cogs;
 
 import de.tle.discord.db.Database;
+import de.tle.discord.emojis.EmojiUser;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -21,7 +22,7 @@ public class LeaderboardCog extends ListenerAdapter {
                 SELECT id, cash FROM users ORDER BY cash DESC LIMIT 10
             """);
 
-            StringBuilder sb = new StringBuilder("🏆 Leaderboard:\n");
+            StringBuilder sb = new StringBuilder(EmojiUser.owner_crown + " Leaderboard:\n");
 
             while (rs.next()) {
                 sb.append(rs.getLong("id"))

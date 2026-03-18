@@ -1,6 +1,7 @@
 package de.tle.discord.cogs;
 
 import de.tle.discord.db.Database;
+import de.tle.discord.emojis.*;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -56,14 +57,14 @@ public class GameCog extends ListenerAdapter {
 
         String result;
 
-        if (player > 21) result = "❌ Bust! You lose.";
+        if (player > 21) result = EmojiMatch.match_lose + " Bust! You lose.";
         else if (dealer > 21 || player > dealer) {
             addWin(userId);
-            result = "✅ You win!";
+            result = EmojiMatch.match_win + " You win!";
         } else if (player == dealer) result = "🤝 Draw.";
         else {
             addLoss(userId);
-            result = "❌ You lose.";
+            result = EmojiMatch.match_lose + " You lose.";
         }
 
         event.reply("🃏 Blackjack\nYou: " + player + "\nDealer: " + dealer + "\n" + result).queue();
@@ -83,11 +84,11 @@ public class GameCog extends ListenerAdapter {
 
         if (player > bot) {
             addWin(userId);
-            result = "✅ You win!";
+            result = EmojiMatch.match_win + " You win!";
         } else if (player == bot) result = "🤝 Draw.";
         else {
             addLoss(userId);
-            result = "❌ You lose.";
+            result = EmojiMatch.match_lose + " You lose.";
         }
 
         event.reply("🎲 Dice\nYou: " + player + "\nBot: " + bot + "\n" + result).queue();
@@ -100,10 +101,10 @@ public class GameCog extends ListenerAdapter {
 
         if (win) {
             addWin(userId);
-            event.reply("🪙 Heads! ✅ You win!").queue();
+            event.reply(EmojiBalance.coin + " Heads! You win! " + EmojiMatch.match_win).queue();
         } else {
             addLoss(userId);
-            event.reply("🪙 Tails! ❌ You lose!").queue();
+            event.reply(EmojiBalance.coin + " Tails! You lose! " + EmojiMatch.match_lose).queue();
         }
     }
 
@@ -114,10 +115,10 @@ public class GameCog extends ListenerAdapter {
 
         if (number % 2 == 0) {
             addWin(userId);
-            event.reply("🎡 Number: " + number + " (Even) ✅ You win!").queue();
+            event.reply("🎡 Number: " + number + " (Even) You win! " + EmojiMatch.match_win).queue();
         } else {
             addLoss(userId);
-            event.reply("🎡 Number: " + number + " (Odd) ❌ You lose!").queue();
+            event.reply("🎡 Number: " + number + " (Odd) You lose! " + EmojiMatch.match_lose).queue();
         }
     }
 
@@ -134,7 +135,7 @@ public class GameCog extends ListenerAdapter {
             result = "🐔 You scared the opponent away!";
         } else {
             addLoss(userId);
-            result = "💀 You chickened out!";
+            result = EmojiMatch.match_death + " You chickened out!";
         }
 
         event.reply("🐔 Chicken Fight\nYou: " + player + "\nEnemy: " + enemy + "\n" + result).queue();
