@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: .env
     env:
-      DISCORD_TOKEN: ${{ secrets.TOKEN }}
+      TOKEN: ${{ secrets.TOKEN }}
 
     steps:
       - name: Repo auschecken
