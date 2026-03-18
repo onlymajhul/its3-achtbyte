@@ -1,0 +1,28 @@
+name: Run Discord Bot
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    env:
+      DISCORD_TOKEN: ${{ secrets.TOKEN }}
+
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Java installieren
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Projekt bauen
+        run: mvn clean package
+
+      - name: Bot starten
+        run: java -jar target/its3-achtbyte.jar
