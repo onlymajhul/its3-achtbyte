@@ -25,4 +25,4 @@ jobs:
         run: mvn clean package
 
       - name: Bot starten
-        run: java -jar target/its3-achtbyte.jar
+        run: java -jar target/its3-achtbyte-1.0-SNAPSHOT.jar
