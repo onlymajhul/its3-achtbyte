@@ -1,4 +1,4 @@
-package de.tle.discord.loader;
+package de.tls.discord.loader;
 
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 

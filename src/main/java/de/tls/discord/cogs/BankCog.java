@@ -1,8 +1,8 @@
-package de.tle.discord.cogs;
+package de.tls.discord.cogs;
 
-import de.tle.discord.db.Database;
-import de.tle.discord.emojis.EmojiBalance;
-import de.tle.discord.emojis.EmojiMatch;
+import de.tls.discord.db.Database;
+import de.tls.discord.emojis.EmojiBalance;
+import de.tls.discord.emojis.EmojiMatch;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

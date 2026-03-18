@@ -1,10 +1,9 @@
-package de.tle.discord;
+package de.tls.discord;
 
-import de.tle.discord.db.Database;
-import de.tle.discord.loader.CogLoader;
+import de.tls.discord.db.Database;
+import de.tls.discord.loader.CogLoader;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -14,8 +13,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] arguments) throws Exception {
 
-        Dotenv dotenv = Dotenv.load();
-        String token = dotenv.get("TOKEN");
+        String token = System.getenv("TOKEN");
         Database.connect();
 
         JDABuilder builder = JDABuilder.createDefault(token);

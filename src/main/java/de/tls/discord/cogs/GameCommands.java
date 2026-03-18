@@ -1,4 +1,4 @@
-package de.tle.discord.cogs;
+package de.tls.discord.cogs;
 
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;

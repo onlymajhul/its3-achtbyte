@@ -7,7 +7,7 @@ on:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-
+    environment: .env
     env:
       DISCORD_TOKEN: ${{ secrets.TOKEN }}
 

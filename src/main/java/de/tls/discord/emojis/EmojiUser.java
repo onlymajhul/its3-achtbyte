@@ -1,4 +1,4 @@
-package de.tle.discord.emojis;
+package de.tls.discord.emojis;
 
 public interface EmojiUser {
     String user_id = "<:user_id:1483402695883620413>";

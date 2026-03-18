@@ -1,4 +1,4 @@
-package de.tle.discord.emojis;
+package de.tls.discord.emojis;
 
 public interface EmojiMatch {
     String match_join = "<:join:1483403975603785861>";

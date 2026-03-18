@@ -1,4 +1,4 @@
-package de.tle.discord.db;
+package de.tls.discord.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

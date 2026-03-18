@@ -1,4 +1,4 @@
-package de.tle.discord.emojis;
+package de.tls.discord.emojis;
 
 public interface EmojiBalance {
     String balance = "<:coinwert:1483406779542012005>";
